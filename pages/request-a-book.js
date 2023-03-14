@@ -32,7 +32,7 @@ const FormStepOne = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/bookrequests", {
+    const response = await fetch("/api/makerequest", {
       method: "POST",
       body: JSON.stringify(newRequest),
     });

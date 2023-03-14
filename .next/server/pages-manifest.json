@@ -4,5 +4,6 @@
   "/_document": "pages/_document.js",
   "/api/submittedrequests": "pages/api/submittedrequests.js",
   "/api/inventory": "pages/api/inventory.js",
-  "/requests": "pages/requests.js"
+  "/requests": "pages/requests.js",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js"
 }
