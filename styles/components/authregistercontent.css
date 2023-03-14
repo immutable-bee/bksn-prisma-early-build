@@ -1,0 +1,63 @@
+.application-btn {
+  height: 3.25rem;
+  background-color: #ffc71f;
+  color: #040415;
+  border: 1px solid #000000;
+  margin-top: 1.5rem;
+}
+
+#signup-btn {
+  margin-bottom: 1rem;
+}
+
+#apply-terms {
+  margin-top: 1.5rem;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+
+  text-align: center;
+
+  color: rgba(71, 72, 71, 0.6);
+}
+
+.short-onboard-fields {
+  width: 12vw;
+}
+
+#input-row-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#t-c-container {
+  display: flex;
+}
+
+#t-c-checkbox {
+  margin-top: 2rem;
+}
+
+#t-c-link {
+  width: 12vw;
+  margin-top: 2rem;
+  color: #2eaaed;
+  background: white;
+}
+
+.apply-return-button {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #2eaaed;
+  margin-right: 25rem;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+#apply-btn {
+  color: #2eaaed;
+}

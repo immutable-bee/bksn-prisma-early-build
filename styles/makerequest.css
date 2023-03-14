@@ -1,0 +1,60 @@
+.make-request-page-container {
+  background: rgb(255, 255, 255);
+  min-width: 320px;
+  display: flex;
+  flex-direction: row;
+}
+
+.make-request-body-container {
+  margin-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8vh;
+  width: 80vw;
+  gap: 5vh;
+}
+
+.top-row {
+  display: flex;
+  gap: 1vw;
+}
+
+.corner-title {
+  color: black;
+}
+
+.return-btn {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #2eaaed;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+.request-form-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.request-form-title {
+  margin-bottom: 1.5rem;
+  color: black;
+}
+
+.new-request-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.new-request-field {
+  width: 40vw;
+}
+
+.request-next-btn {
+  background-color: #ffc71f;
+  color: #040415;
+  margin-top: 2rem;
+}

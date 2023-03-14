@@ -1,0 +1,80 @@
+#detail-page-container {
+  background-color: white;
+  display: flex;
+  gap: 5vw;
+}
+
+#book-detail-container {
+  display: flex;
+  gap: 3vw;
+  margin-top: 12vh;
+}
+
+#detail-book-cover {
+  margin-top: 5vh;
+  border-radius: 25px;
+  width: 35vw;
+  height: fit-content;
+}
+
+#book-detail-content-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 7vw;
+
+  width: 40vw;
+}
+
+#title-isbn-container {
+  margin-top: 7vh;
+  display: flex;
+}
+
+#ACF-detail-row {
+  display: flex;
+}
+
+#ACF-content-row {
+  display: flex;
+}
+
+#detail-book-title {
+  color: black;
+  flex: 1;
+}
+
+#detail-isbn {
+  color: #2eaaed;
+}
+
+#detail-price {
+  color: #2eaaed;
+  margin-bottom: 3vh;
+}
+
+.detail-title {
+  color: black;
+  flex: 1;
+}
+
+.detail-text {
+  color: grey;
+  flex: 1;
+}
+
+#detail-notes-title {
+  margin-top: 5vh;
+  color: black;
+}
+
+#detail-notes {
+  color: grey;
+}
+
+#detail-btn {
+  margin-top: 5vh;
+  background-color: #ffc71f;
+  width: 30vw;
+  align-self: center;
+}

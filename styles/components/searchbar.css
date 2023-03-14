@@ -1,0 +1,14 @@
+#searchbar-container {
+  display: flex;
+}
+
+#searchbar-input-field {
+  width: 70vw;
+}
+
+#settings-btn {
+  width: 2.5vw;
+  height: 2rem;
+  margin-left: 1vw;
+  align-self: center;
+}

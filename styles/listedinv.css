@@ -1,0 +1,60 @@
+#listed-inv-container {
+  background: white;
+  display: flex;
+  gap: 2vw;
+}
+
+#listed-inventory-title {
+  width: 10vw;
+  color: black;
+}
+
+#listed-inv-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6vh;
+  gap: 1vh;
+  width: 85vw;
+}
+
+#books-container {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+}
+
+.book-container {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-row-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-title {
+  color: black;
+  max-width: 10vw;
+}
+
+.book-condition {
+  color: rgb(114, 117, 119);
+}
+
+.book-price {
+  text-align: end;
+
+  margin-bottom: 0;
+  color: #2eaaed;
+}
+
+.book-shopping-bag {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 2rem;
+  background-color: #f2f2f2;
+}

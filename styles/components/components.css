@@ -1,0 +1,227 @@
+/* Vsidebar */
+#nav-container {
+  width: 15vw;
+  display: flex;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1vw;
+  margin-top: 5vh;
+  border-color: #040415;
+  border-radius: 20px;
+  border-style: solid;
+  background: #ffffff;
+  height: 90vh;
+}
+
+#nav-bar-logo {
+  margin-bottom: 1rem;
+}
+
+.nav-item {
+  background-color: white;
+  color: #040415;
+  width: 13vw;
+  height: 6vh;
+}
+
+.nav-icon {
+  margin-right: 11vw;
+}
+
+#copy-success-message {
+  margin-top: 15vh;
+}
+
+#invite-btn {
+  background-color: #2eaaed;
+
+  border: 1px solid #040415;
+  width: 13vw;
+  min-height: 5vh;
+
+  margin-bottom: 5vh;
+}
+
+#sign-out {
+  color: #2eaaed;
+  background-color: white;
+  margin-bottom: 0.5rem;
+  font-size: small;
+}
+
+#active-btn {
+  background-color: #ffc71f;
+}
+
+/* Searchbar */
+#searchbar-container {
+  display: flex;
+}
+
+#searchbar-input-field {
+  width: 70vw;
+}
+
+#settings-btn {
+  width: 2.5vw;
+  height: 2rem;
+  margin-left: 1vw;
+  align-self: center;
+}
+
+/* bookDetail */
+#detail-page-container {
+  background-color: white;
+  display: flex;
+  gap: 5vw;
+}
+
+#book-detail-container {
+  display: flex;
+  gap: 3vw;
+  margin-top: 12vh;
+}
+
+#detail-book-cover {
+  margin-top: 5vh;
+  border-radius: 25px;
+  width: 35vw;
+  height: fit-content;
+}
+
+#book-detail-content-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 7vw;
+
+  width: 40vw;
+}
+
+#title-isbn-container {
+  margin-top: 7vh;
+  display: flex;
+}
+
+#ACF-detail-row {
+  display: flex;
+}
+
+#ACF-content-row {
+  display: flex;
+}
+
+#detail-book-title {
+  color: black;
+  flex: 1;
+}
+
+#detail-isbn {
+  color: #2eaaed;
+}
+
+#detail-price {
+  color: #2eaaed;
+  margin-bottom: 3vh;
+}
+
+.detail-title {
+  color: black;
+  flex: 1;
+}
+
+.detail-text {
+  color: grey;
+  flex: 1;
+}
+
+#detail-notes-title {
+  margin-top: 5vh;
+  color: black;
+}
+
+#detail-notes {
+  color: grey;
+}
+
+#detail-btn {
+  margin-top: 5vh;
+  background-color: #ffc71f;
+  width: 30vw;
+  align-self: center;
+}
+
+/* loader */
+.loader {
+  border: 10px solid #ffc71f;
+  border-top: #2eaaed;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* returning user component */
+
+#welcome-back-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#welcome-back-text {
+  color: black;
+}
+
+#enter-btn {
+  background-color: #ffc71f;
+  color: black;
+}
+
+/* requestcard component */
+
+.request-card-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.request-card-row {
+  display: flex;
+  gap: 0.5vw;
+}
+
+.request-card-title {
+  color: black;
+}
+
+.request-detail-storename {
+  color: #2eaaed;
+}
+
+.request-card-location {
+  color: black;
+}
+
+.request-shopping-bag {
+  width: 2rem;
+}
+
+.request-cancel-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #f2f2f2;
+  border: 1px solid black;
+}

@@ -1,0 +1,30 @@
+#manage-page-container {
+  background: white;
+  display: flex;
+  gap: 2vw;
+}
+
+#manage-body-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#manage-view-buttons-container {
+  display: flex;
+  gap: 1rem;
+}
+
+#manage-offers-title {
+  margin-top: 10vh;
+  color: black;
+}
+
+#offers-active-tab {
+  background-color: #2eaaed;
+}
+
+.offers-inactive-tab {
+  background-color: white;
+  border: 1px solid grey;
+  color: grey;
+}

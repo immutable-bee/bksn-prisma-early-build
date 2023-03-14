@@ -1,0 +1,56 @@
+#request-page-container {
+  background: white;
+  display: flex;
+}
+
+#requests-body-container {
+  margin-left: 2vw;
+}
+
+#request-view-buttons-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1vh;
+}
+
+#request-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+  flex-wrap: wrap;
+  gap: 1vh;
+}
+
+#request-title {
+  color: black;
+  margin-top: 6vh;
+}
+
+.requests-category-title {
+  color: black;
+  margin-top: 2vh;
+  margin-left: 1.5vw;
+}
+#requests-in-inv-container {
+  display: flex;
+}
+
+#requests-not-ininv-container {
+  display: flex;
+}
+
+/* also styles manage offers tabs */
+#active-tab {
+  background-color: #2eaaed;
+  border: 1px solid;
+}
+
+.inactive-tab {
+  background-color: white;
+  border: 1px solid grey;
+  color: grey;
+}
+
+#submitted-requests-content-container {
+  display: flex;
+}

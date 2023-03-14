@@ -1,0 +1,80 @@
+#upload-page-container {
+  background: white;
+  display: flex;
+}
+
+#upload-body-container {
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+}
+
+.right-corner-page-title {
+  margin-top: 10vh;
+  margin-left: 2vw;
+  color: black;
+}
+
+#update-inv-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#upload-content-title {
+  color: black;
+}
+
+#upload-inv-instruction-text {
+  color: black;
+  text-align: center;
+  max-width: 40vw;
+  margin-bottom: 1rem;
+}
+
+#csv-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#upload-box {
+  border: 2px dotted grey;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 40vh;
+  margin-bottom: 1rem;
+}
+
+#choose-file-input {
+  width: 12rem;
+}
+
+#cloud-upload-icon {
+  margin-bottom: 2rem;
+}
+
+#upload-box-bold-txt {
+  color: black;
+}
+
+#upload-box-txt {
+  color: black;
+}
+
+#upload-inv-next-btn {
+  background-color: #ffc71f;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+  width: 35vw;
+}
+
+#download-csv-template-btn {
+  background-color: #2eaaed;
+  border: 1px solid black;
+  width: 35vw;
+}

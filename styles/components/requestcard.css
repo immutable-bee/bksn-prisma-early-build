@@ -1,0 +1,33 @@
+.request-card-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.request-card-row {
+  display: flex;
+  gap: 0.5vw;
+}
+
+.request-card-title {
+  color: black;
+}
+
+.request-detail-storename {
+  color: #2eaaed;
+}
+
+.request-card-location {
+  color: black;
+}
+
+.request-shopping-bag {
+  width: 2rem;
+}
+
+.request-cancel-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #f2f2f2;
+  border: 1px solid black;
+}

@@ -1,0 +1,130 @@
+.modal-base-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-body-row {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buy-modal-field {
+  width: 30vw;
+}
+
+#brmb-field1 {
+}
+#brmb-field2 {
+  grid-area: field2;
+}
+#brmb-field3 {
+  grid-area: field3;
+}
+#brmb-field4 {
+  grid-area: field4;
+}
+#brmb-field5 {
+  flex: 1;
+  width: 10vw;
+}
+#brmb-field6 {
+  flex: 1;
+  width: 10vw;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-next-btn {
+  background-color: #ffc71f;
+  width: 30vw;
+  height: 6vh;
+  border: 1px solid black;
+  border-radius: 25px;
+  color: black;
+}
+
+#modal-cancel-btn {
+  background-color: white;
+  color: black;
+}
+/*
+  #request-to-buy-modal-offer-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  */
+
+#make-offer-modal-body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.make-offer-modal-field {
+  width: 30vw;
+}
+
+#modal-upload-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px dotted grey;
+  width: 30vw;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+}
+
+#modal-upload-box-txt {
+  color: grey;
+}
+
+#make-offer-modal-row {
+  display: flex;
+  justify-content: center;
+  width: 30vw;
+  gap: 2vw;
+}
+
+.make-offer-modal-row-field {
+}
+
+.make-offer-modal-row-icon {
+}
+
+#modal-cvv-icon {
+}
+
+.modal-checkbox {
+}
+
+.tc-text {
+  margin-top: 1vh;
+  font-weight: 300;
+}
+
+#make-offer-modal-submit-btn {
+  background-color: #ffc71f;
+  color: black;
+  border: 1px solid black;
+  width: 30vw;
+}
+
+#make-offer-modal-cancel-btn {
+  background-color: white;
+  color: black;
+}
+
+#modal-close-btn {
+  background-color: #ffc71f;
+}

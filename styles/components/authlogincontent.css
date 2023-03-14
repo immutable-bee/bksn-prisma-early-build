@@ -1,0 +1,54 @@
+.auth-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 80vh;
+}
+
+.auth-title-text {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+#apply-form-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.onboard-fields {
+  display: flex;
+  align-items: center;
+  width: 25vw;
+}
+
+#forgot-pass-txt {
+  color: #2eaaed;
+  align-self: flex-end;
+}
+
+#login-btn {
+  height: 7vh;
+  background-color: #ffc71f;
+  color: #040415;
+  border: 1px solid #000000;
+  margin-top: 1.5rem;
+}
+
+#signup-text {
+  margin-top: 5vh;
+}
+
+#apply-now-link {
+  color: #2eaaed;
+}
+
+#apply-now-text {
+}
