@@ -189,7 +189,6 @@ const ListedInvPage = () => {
 
   const modalHandler = () => setVisible(true);
   const modalCloseHandler = () => setVisible(false);
-
   // function to display book detail view
   const bookClickHandler = () => {};
 
