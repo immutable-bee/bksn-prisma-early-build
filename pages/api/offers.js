@@ -26,5 +26,19 @@ export default async (req, res) => {
         where: { listingId: listing.id },
       })
   );
-  res.json([listingOffers, requestOffers]);
+
+  const listingOffersSent = await prisma.offer.findMany({
+    where: { sender: sender, request: { none: {} } },
+  });
+
+  const requestOffersSent = await prisma.offer.findMany({
+    where: { sender: sender, offer: { none: {} } },
+  });
+
+  res.json([
+    listingOffers,
+    requestOffers,
+    listingOffersSent,
+    requestOffersSent,
+  ]);
 };

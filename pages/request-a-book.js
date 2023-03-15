@@ -3,7 +3,6 @@ import { Button, Checkbox, Input } from "@nextui-org/react";
 import Image from "next/image";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
-import axios from "axios";
 
 const FormStepOne = (props) => {
   const { data: session } = useSession();
