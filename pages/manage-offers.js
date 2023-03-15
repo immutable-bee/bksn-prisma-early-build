@@ -28,7 +28,7 @@ const ManageOffersPage = () => {
   const getOffers = async () => {
     await fetch("/api/offers", {
       method: "POST",
-      body: session.user.email,
+      body: JSON.stringify(session.user.email),
     })
       .then((response) => {
         return response.json();
