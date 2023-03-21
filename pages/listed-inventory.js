@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Book from "../compontents/BookCard";
-import VNavBar from "../compontents/VNavBar";
-import SearchBar from "../compontents/SearchBar";
-import { ModalBase } from "../compontents/Modal";
+import Book from "../components/BookCard";
+import VNavBar from "../components/VNavBar";
+import SearchBar from "../components/SearchBar";
+import { ModalBase } from "../components/Modal";
 import { Input, Modal, Button } from "@nextui-org/react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";

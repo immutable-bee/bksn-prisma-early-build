@@ -28,11 +28,11 @@ export default async (req, res) => {
   );
 
   const listingOffersSent = await prisma.offer.findMany({
-    where: { sender: sender, request: { none: {} } },
+    where: { sender: sender, request: { is: null } },
   });
 
   const requestOffersSent = await prisma.offer.findMany({
-    where: { sender: sender, offer: { none: {} } },
+    where: { sender: sender, listing: { is: null } },
   });
 
   res.json([

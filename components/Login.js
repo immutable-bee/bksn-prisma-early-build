@@ -25,27 +25,14 @@ const LoginContentOne = (props) => {
         }
       />
       <Spacer y={0.5} />
-      <Input
-        type="password"
-        placeholder="Password"
-        className="onboard-fields"
-        contentLeft={
-          <Image
-            src="/onboarding/lock-icon.svg"
-            alt="lock icon"
-            height="17"
-            width="17"
-            id="pass-icon"
-          />
-        }
-      />
+
       <Spacer y={0.5} />
       <Button light rounded id="forgot-pass-txt">
         Forgot Password?
       </Button>
       <Link href="/">
         <Button size="lg" id="login-btn" rounded onClick={() => signIn()}>
-          Log In
+          Continue With Email
         </Button>
       </Link>
       <h6 id="signup-text" className="auth-content-text">

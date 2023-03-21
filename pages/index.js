@@ -1,4 +1,4 @@
-import { Login } from "../compontents/Login";
+import { Login } from "../components/Login";
 import { signOut, useSession } from "next-auth/react";
 
 const Index = () => {

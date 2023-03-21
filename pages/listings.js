@@ -1,8 +1,8 @@
 import { prisma } from "../db/prismaDb";
-import VNavBar from "../compontents/VNavBar";
+import VNavBar from "../components/VNavBar";
 import { useState } from "react";
-import Book from "../compontents/BookCard";
-import SearchBar from "../compontents/SearchBar";
+import Book from "../components/BookCard";
+import SearchBar from "../components/SearchBar";
 
 export async function getServerSideProps() {
   const allListings = await prisma.listing.findMany({

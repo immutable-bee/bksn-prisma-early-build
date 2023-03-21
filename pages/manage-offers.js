@@ -1,4 +1,4 @@
-import VNavBar from "../compontents/VNavBar";
+import VNavBar from "../components/VNavBar";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";

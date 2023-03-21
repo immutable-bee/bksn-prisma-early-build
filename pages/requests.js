@@ -1,8 +1,8 @@
-import VNavBar from "../compontents/VNavBar";
-import { ModalBase } from "../compontents/Modal";
+import VNavBar from "../components/VNavBar";
+import { ModalBase } from "../components/Modal";
 import { Button, Modal, Input, Checkbox } from "@nextui-org/react";
 import { useEffect, useState } from "react";
-import RequestCard from "../compontents/RequestCard";
+import RequestCard from "../components/RequestCard";
 import Image from "next/image";
 import { getSession, useSession } from "next-auth/react";
 import { prisma } from "../db/prismaDb";
