@@ -22,8 +22,8 @@ const providers = [
   },
 ];
 
-const SignInPage = ({ providers, csrfToken }) => {
-  const { data: session } = useSession();
+const SignInPage = () => {
+  const { data: session, status } = useSession();
   const { push } = useRouter();
   const [email, setEmail] = useState("");
 
