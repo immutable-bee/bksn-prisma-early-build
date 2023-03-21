@@ -1,18 +1,19 @@
 import { Login } from "../components/Login";
 import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Index = () => {
   const { data: session } = useSession();
-  if (!session) {
-    return <Login className="auth-page" />;
-  } else {
-    return (
-      <div>
-        <h1>Logged In!</h1>
-        <button onClick={() => signOut()}>Sign Out</button>
-      </div>
-    );
-  }
+  const { push } = useRouter();
+
+  useEffect(() => {
+    if (!session) {
+      push("/auth/signin");
+    } else {
+      push("/listings");
+    }
+  }, [session]);
 };
 
 export default Index;

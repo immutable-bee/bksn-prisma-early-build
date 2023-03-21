@@ -23,6 +23,12 @@
   align-items: center;
 }
 
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .onboard-fields {
   display: flex;
   align-items: center;
@@ -38,8 +44,42 @@
   height: 7vh;
   background-color: #ffc71f;
   color: #040415;
-  border: 1px solid #000000;
+  border: 1px solid #424040;
+  border-radius: 25px;
   margin-top: 1.5rem;
+}
+
+#first-time-tooltip {
+  margin-top: 1rem;
+}
+
+#first-time-label {
+  color: #2eaaed;
+}
+
+#center-split {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.dashed-line {
+  border-bottom: 1px solid #ffc71f;
+  width: 50%;
+  height: 1rem;
+}
+
+#or-text {
+  margin-top: 0.1rem;
+  color: grey;
+}
+
+#social-auth-container {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 #signup-text {
@@ -50,5 +90,9 @@
   color: #2eaaed;
 }
 
-#apply-now-text {
+.social-provider-btn {
+  background-color: white;
+  border: silver solid 1px;
+  width: 6rem;
+  height: 3rem;
 }
