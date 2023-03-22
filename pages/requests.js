@@ -270,8 +270,8 @@ const RequestsPage = ({ initialRequests }) => {
                 Requests Submitted
               </Button>
             </div>
-            <h4 className="requests-category-title">In your Inventory</h4>
             <div id="request-content-container">
+              <h4 className="requests-category-title">In your Inventory</h4>
               <div id="requests-in-inv-container">
                 {requests.map((book) => {
                   return (

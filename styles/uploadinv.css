@@ -50,8 +50,26 @@
   margin-bottom: 1rem;
 }
 
+#upload-box.highlight {
+  border-color: #2eaaed;
+}
+
 #choose-file-input {
   width: 12rem;
+  height: 1rem;
+}
+
+#file-input-label {
+  border: 1px solid #2eaaed;
+  cursor: pointer;
+  border-radius: 25px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 0.5rem;
+}
+
+#file-preview {
+  margin-top: 1rem;
 }
 
 #cloud-upload-icon {

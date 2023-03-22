@@ -1,4 +1,18 @@
 #listings-page-container {
   background-color: white;
   display: flex;
+  gap: 2vw;
+}
+
+#listings-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6vh;
+  gap: 1vh;
+  width: 85vw;
+}
+
+#listings-title {
+  width: 10vw;
+  color: black;
 }

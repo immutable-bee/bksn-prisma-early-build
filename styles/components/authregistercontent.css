@@ -34,6 +34,13 @@
   gap: 1rem;
 }
 
+#modal-text-link {
+  color: #2eaaed;
+  cursor: pointer;
+  font-weight: 100;
+  font-size: small;
+}
+
 #t-c-container {
   display: flex;
 }

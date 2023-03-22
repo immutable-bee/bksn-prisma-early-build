@@ -1,4 +1,4 @@
-import VNavBar from "../compontents/VNavBar";
+import VNavBar from "../components/VNavBar";
 import { Button, Checkbox, Input } from "@nextui-org/react";
 import Image from "next/image";
 import { useState } from "react";

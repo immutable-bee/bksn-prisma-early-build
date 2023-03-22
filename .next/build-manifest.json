@@ -25,15 +25,30 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/auth/signin": [
+    "/listed-inventory": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/auth/signin.js"
+      "static/chunks/pages/listed-inventory.js"
     ],
-    "/listings": [
+    "/manage-offers": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/listings.js"
+      "static/chunks/pages/manage-offers.js"
+    ],
+    "/request-a-book": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/request-a-book.js"
+    ],
+    "/requests": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/requests.js"
+    ],
+    "/upload-inventory": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/upload-inventory.js"
     ]
   },
   "ampFirstPages": []
