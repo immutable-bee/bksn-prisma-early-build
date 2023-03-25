@@ -1,7 +1,11 @@
 import { Button, Input } from "@nextui-org/react";
 import Image from "next/image";
 
-const SearchBar = (props) => {
+const SearchBar = ({ onSearch }) => {
+  const handleInputChange = (event) => {
+    onSearch(event.target.value);
+  };
+
   return (
     <div id="searchbar-container">
       <Input
@@ -11,6 +15,7 @@ const SearchBar = (props) => {
         color={"primary"}
         type="text"
         placeholder="Search for a book by title or author"
+        onChange={handleInputChange}
         contentLeft={
           <Image
             src="/icons/icon-search.svg"

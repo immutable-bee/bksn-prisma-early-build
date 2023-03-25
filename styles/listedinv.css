@@ -25,6 +25,31 @@
   row-gap: 1rem;
 }
 
+#no-listings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+#clipboard-icon {
+  height: 50vh;
+}
+
+#no-listings-text {
+  color: grey;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+#listings-upload-btn {
+  background-color: #ffc71f;
+  width: 30%;
+  color: black;
+  border: 1px solid black;
+}
+
 .book-container {
   margin-left: 1rem;
   display: flex;

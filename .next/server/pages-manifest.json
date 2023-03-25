@@ -2,13 +2,15 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/api/offers": "pages/api/offers.js",
   "/requests": "pages/requests.js",
-  "/request-a-book": "pages/request-a-book.js",
+  "/api/listings": "pages/api/listings.js",
   "/manage-offers": "pages/manage-offers.js",
-  "/api/submittedrequests": "pages/api/submittedrequests.js",
-  "/listed-inventory": "pages/listed-inventory.js",
+  "/upload-inventory": "pages/upload-inventory.js",
+  "/request-a-book": "pages/request-a-book.js",
+  "/api/offers": "pages/api/offers.js",
   "/api/inventory": "pages/api/inventory.js",
-  "/upload-inventory": "pages/upload-inventory.js"
+  "/api/submittedrequests": "pages/api/submittedrequests.js",
+  "/listings": "pages/listings.js",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
+  "/listed-inventory": "pages/listed-inventory.js"
 }

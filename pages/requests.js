@@ -235,13 +235,27 @@ const RequestsPage = ({ initialRequests }) => {
   // condition for filtering inventory/requests arrays
   const matchingCondition = ({ itemB, itemA }) => itemB.title == itemA.title;
   // returns filtered array of matching title.values between inventory & requests
-  const matches = requests.filter((itemB) =>
-    inventory.some((itemA) => matchingCondition({ itemB, itemA }))
-  );
+  const matches = () => {
+    if (inventory != undefined) {
+      return requests.filter((itemB) =>
+        inventory.some((itemA) => matchingCondition({ itemB, itemA }))
+      );
+    } else {
+      return [];
+    }
+  };
+
   // returns negatively filtered array from requests where matching titles in inventory are removed
-  const noMatch = requests.filter(
-    (itemB) => !inventory.some((itemA) => matchingCondition({ itemB, itemA }))
-  );
+  const noMatch = () => {
+    if (inventory != undefined) {
+      return requests.filter(
+        (itemB) =>
+          !inventory.some((itemA) => matchingCondition({ itemB, itemA }))
+      );
+    } else {
+      return [];
+    }
+  };
 
   return (
     <div id="request-page-container">
@@ -273,7 +287,7 @@ const RequestsPage = ({ initialRequests }) => {
             <div id="request-content-container">
               <h4 className="requests-category-title">In your Inventory</h4>
               <div id="requests-in-inv-container">
-                {requests.map((book) => {
+                {matches().map((book) => {
                   return (
                     <RequestCard
                       key={book.id}
@@ -290,7 +304,7 @@ const RequestsPage = ({ initialRequests }) => {
               </div>
               <h4 className="requests-category-title">Newest to Oldest</h4>
               <div id="requests-not-ininv-container">
-                {requests.map((request) => {
+                {noMatch().map((request) => {
                   return (
                     <RequestCard
                       key={request.id}

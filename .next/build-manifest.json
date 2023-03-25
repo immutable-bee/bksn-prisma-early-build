@@ -30,6 +30,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/listed-inventory.js"
     ],
+    "/listings": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/listings.js"
+    ],
     "/manage-offers": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

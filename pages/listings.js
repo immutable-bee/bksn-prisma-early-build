@@ -1,42 +1,54 @@
-import { prisma } from "../db/prismaDb";
 import VNavBar from "../components/VNavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Book from "../components/BookCard";
 import SearchBar from "../components/SearchBar";
-
-export async function getServerSideProps() {
-  const allListings = await prisma.listing.findMany({
-    include: {
-      owner: {
-        select: {
-          business_name: true,
-          business_state: true,
-          business_city: true,
-        },
-      },
-    },
-  });
-
-  return {
-    props: {
-      initialListings: JSON.parse(JSON.stringify(allListings)),
-    },
-  };
-}
+import { useSession } from "next-auth/react";
 
 const blueCover = "/books/blue-book.svg";
 
-const ListingsPage = ({ initialListings }) => {
-  const [listings, setListings] = useState(initialListings);
+const ListingsPage = () => {
+  const [listings, setListings] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const { data: session } = useSession();
+
+  const fetchListings = async () => {
+    const response = await fetch("/api/listings", {
+      method: "POST",
+      body: JSON.stringify(session.user.email),
+    });
+    setListings(await response.json());
+  };
+
+  useEffect(() => {
+    if (session) {
+      fetchListings();
+    }
+  }, [session]);
+
+  useEffect(() => {
+    if (!searchQuery) {
+      setSearchResults([]);
+      return;
+    }
+
+    const fetchSearchData = async () => {
+      const response = await fetch(`/api/search?search=${searchQuery}`);
+      const data = await response.json();
+      setSearchResults(data);
+    };
+
+    fetchSearchData();
+  }, [searchQuery]);
 
   return (
     <div id="listings-page-container">
       <VNavBar listings={"active-btn"} />
       <div id="listings-content-container">
         <h5 id="listings-title">Listings</h5>
-        <SearchBar />
+        <SearchBar onSearch={setSearchQuery} />
         <div id="books-container">
-          {listings.map((book) => {
+          {(searchResults.length > 0 ? searchResults : listings).map((book) => {
             if (book.title.length <= 15) {
               return (
                 <Book

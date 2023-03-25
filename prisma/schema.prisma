@@ -86,6 +86,7 @@ model Request {
   format String?
   title String
   author String
+  notes String? @db.Text
   offers Offer[]
 
   @@index([date_expires])

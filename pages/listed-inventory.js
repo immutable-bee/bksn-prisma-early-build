@@ -111,56 +111,6 @@ const ListedInvPage = () => {
 
   const [inventory, setInventory] = useState([]);
 
-  const [books, setBooks] = useState([
-    {
-      title: "Da Vinci Code",
-      condition: "Good Condition",
-      price: "$10.99",
-      id: 1,
-    },
-    {
-      title: "Angels and Demons",
-      condition: "As good as new",
-      price: "$10.99",
-      id: 2,
-    },
-    {
-      title: "Catching Fire",
-      condition: "Good Condition",
-      price: "$10.99",
-      id: 3,
-    },
-    {
-      title: "Twilight",
-      condition: "Fair Condition",
-      price: "$10.99",
-      id: 4,
-    },
-    {
-      title: "The Lost Symbom",
-      condition: "Good Condtion",
-      price: "$14.99",
-      id: 5,
-    },
-    {
-      title: "Da Vinci Code",
-      condition: "Good Condition",
-      price: "$10.99",
-      id: 1,
-    },
-    {
-      title: "Angels and Demons",
-      condition: "As good as new",
-      price: "$10.99",
-      id: 2,
-    },
-    {
-      title: "Catching Fire",
-      condition: "Good Condition",
-      price: "$10.99",
-      id: 3,
-    },
-  ]);
   const [visible, setVisible] = useState(false);
 
   const getInventory = async () => {
@@ -217,37 +167,65 @@ const ListedInvPage = () => {
           footer={<BuyRequestModalFooter closebtn={modalCloseHandler} />}
         />
         <div id="books-container">
-          {inventory.map((book) => {
-            if (book.title.length <= 15) {
-              return (
-                <Book
-                  key={book.id}
-                  title={book.title}
-                  condition={book.condition}
-                  price={book.price}
-                  btnHandler={() => {
-                    deleteInventoryHandler(book);
-                  }}
-                  cover={blueCover}
-                  icon={"/icons/icon-cross.svg"}
-                />
-              );
+          {(() => {
+            if (inventory[0] != undefined) {
+              return inventory.map((book) => {
+                if (book.title.length <= 15) {
+                  return (
+                    <Book
+                      key={book.id}
+                      title={book.title}
+                      condition={book.condition}
+                      price={book.price}
+                      btnHandler={() => {
+                        deleteInventoryHandler(book);
+                      }}
+                      cover={blueCover}
+                      icon={"/icons/icon-cross.svg"}
+                    />
+                  );
+                } else {
+                  return (
+                    <Book
+                      key={book.id}
+                      title={book.title.slice(0, 14).concat("...")}
+                      condition={book.condition}
+                      price={book.price}
+                      btnHandler={() => {
+                        deleteInventoryHandler(book);
+                      }}
+                      cover={blueCover}
+                      icon={"/icons/icon-cross.svg"}
+                    />
+                  );
+                }
+              });
             } else {
               return (
-                <Book
-                  key={book.id}
-                  title={book.title.slice(0, 14).concat("...")}
-                  condition={book.condition}
-                  price={book.price}
-                  btnHandler={() => {
-                    deleteInventoryHandler(book);
-                  }}
-                  cover={blueCover}
-                  icon={"/icons/icon-cross.svg"}
-                />
+                <div id="no-listings-container">
+                  <Image
+                    src="/icons/icon-large-clipboards.svg"
+                    alt="clipboard-icon"
+                    id="clipboard-icon"
+                    width={"300"}
+                    height={"350"}
+                  />
+                  <h4 id="no-listings-bold">
+                    Welcome to Booksellers Network! You don't have any listings
+                    yet
+                  </h4>
+                  <p id="no-listings-text">
+                    Your inventory is empty at the moment. Start adding your
+                    first books to your inventory by uploading a CSV file. Let's
+                    get started!
+                  </p>
+                  <Button id="listings-upload-btn" rounded>
+                    Upload Inventory
+                  </Button>
+                </div>
               );
             }
-          })}
+          })()}
         </div>
       </div>
     </div>

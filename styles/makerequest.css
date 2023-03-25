@@ -53,8 +53,14 @@
   width: 40vw;
 }
 
+.new-request-expires-field {
+  margin-top: 1rem;
+  width: 20rem;
+}
+
 .request-next-btn {
   background-color: #ffc71f;
   color: #040415;
   margin-top: 2rem;
+  border: 1px black solid;
 }

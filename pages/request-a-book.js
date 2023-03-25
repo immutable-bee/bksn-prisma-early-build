@@ -1,39 +1,52 @@
 import VNavBar from "../components/VNavBar";
 import { Button, Checkbox, Input } from "@nextui-org/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 
 const FormStepOne = (props) => {
   const { data: session } = useSession();
-  const prismaUser = async () => {
-    await prisma.user.findUnique({
-      where: { email: session.user.email },
-    });
-  };
-  const id = prismaUser.id;
 
-  var date = new Date();
-  date.setDate(date.getDate() + 7);
+  useEffect(() => {
+    if (session) {
+      const userEmail = session.user.email;
+      setSenderEmail(userEmail);
+    }
+  }, [session]);
+
+  const [senderEmail, setSenderEmail] = useState();
 
   const [newRequest, setNewRequest] = useState({
-    ownerId: id,
     title: "",
     condition: "",
     format: "",
     author: "",
+    isbn: "",
+    notes: "",
     date_expires: new Date("2023-03-20").toISOString(),
   });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "date_expires") {
+      setNewRequest({
+        ...newRequest,
+        date_expires: new Date(value).toISOString(),
+      });
+    } else {
+      setNewRequest({ ...newRequest, [name]: value });
+    }
+  };
+  /*
   const handleChange = (e) => [
     setNewRequest({ ...newRequest, [e.target.name]: e.target.value }),
   ];
-
+*/
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch("/api/makerequest", {
       method: "POST",
-      body: JSON.stringify(newRequest),
+      body: JSON.stringify([senderEmail, newRequest]),
     });
 
     return await response.json();
@@ -48,7 +61,6 @@ const FormStepOne = (props) => {
           <h4 className="request-form-title">Your Request</h4>
           <form className="new-request-form" onSubmit={handleSubmit}>
             <Input
-              value={newRequest.title}
               onChange={handleChange}
               name="title"
               className="new-request-field"
@@ -65,6 +77,7 @@ const FormStepOne = (props) => {
               }
             />
             <Input
+              onChange={handleChange}
               name="isbn"
               className="new-request-field"
               type="text"
@@ -80,7 +93,6 @@ const FormStepOne = (props) => {
               }
             />
             <Input
-              value={newRequest.author}
               onChange={handleChange}
               name="author"
               className="new-request-field"
@@ -97,7 +109,6 @@ const FormStepOne = (props) => {
               }
             />
             <Input
-              value={newRequest.condition}
               onChange={handleChange}
               name="condition"
               className="new-request-field"
@@ -114,7 +125,6 @@ const FormStepOne = (props) => {
               }
             />
             <Input
-              value={newRequest.format}
               onChange={handleChange}
               name="format"
               className="new-request-field"
@@ -131,6 +141,7 @@ const FormStepOne = (props) => {
               }
             />
             <Input
+              onChange={handleChange}
               name="notes"
               className="new-request-field"
               type="text"
@@ -145,12 +156,13 @@ const FormStepOne = (props) => {
                 />
               }
             />
-            <Checkbox
-              onChange={props.cBoxHandler}
-              id="default-ship-address-cbox"
-            >
-              Use store address for shipping address?
-            </Checkbox>
+            <Input
+              onChange={handleChange}
+              className="new-request-expires-field"
+              name="date_expires"
+              type={"date"}
+              labelLeft="Expires:"
+            />
             <Button
               type="submit"
               onClick={props.formStepHandler}
@@ -352,14 +364,6 @@ const MakeRequestPage = () => {
   const [requestFormStep, setRequestFormStep] = useState(0);
   const [formOneBtnText, setFormOneBtnText] = useState("Next");
 
-  const onUseDefaultAddress = () => {
-    if (formOneBtnText == "Next") {
-      setFormOneBtnText("Submit");
-    } else {
-      setFormOneBtnText("Next");
-    }
-  };
-
   // increments form step, passed to next button
   const requestFormBtnHandler = () => {
     if (requestFormStep == 0) {
@@ -379,13 +383,7 @@ const MakeRequestPage = () => {
   };
 
   if (requestFormStep == 0) {
-    return (
-      <FormStepOne
-        //formStepHandler={requestFormBtnHandler}
-        cBoxHandler={onUseDefaultAddress}
-        formStepOneBtnText={formOneBtnText}
-      />
-    );
+    return <FormStepOne formStepOneBtnText={formOneBtnText} />;
   } else if (requestFormStep == 1) {
     return (
       <FormStepTwo
