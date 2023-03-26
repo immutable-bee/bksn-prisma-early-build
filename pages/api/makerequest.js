@@ -1,6 +1,7 @@
 import { prisma } from "../../db/prismaDb";
+import { auth, requireRole } from "../../utils/middleware";
 
-export default async (req, res) => {
+const handler = async (req, res) => {
   const [senderEmail, requestdata] = JSON.parse(req.body);
 
   const sender = await prisma.user.findUnique({
@@ -24,5 +25,18 @@ export default async (req, res) => {
       notes: requestdata.notes,
       date_expires: requestdata.date_expires,
     },
+  });
+  res.status(200).json({ message: "Book request created successfully" });
+};
+
+export default async (req, res) => {
+  await auth(req, res, async () => {
+    await requireRole(["APPROVED_USER", "SUBSCRIBED_USER"])(
+      req,
+      res,
+      async () => {
+        await handler(req, res);
+      }
+    );
   });
 };

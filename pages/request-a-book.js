@@ -37,11 +37,7 @@ const FormStepOne = (props) => {
       setNewRequest({ ...newRequest, [name]: value });
     }
   };
-  /*
-  const handleChange = (e) => [
-    setNewRequest({ ...newRequest, [e.target.name]: e.target.value }),
-  ];
-*/
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch("/api/makerequest", {

@@ -48,11 +48,13 @@ model VerificationToken {
 
 model User {
   id String @id @default(uuid())
+  role             UserRole    @default(NEW_USER)
+  onboardingComplete Boolean @default(false)
   name String?
   business_name String?
   email String? @unique
   emailVerified DateTime? @map("email_verified")
-  image         String?
+  image         String? @db.Text
   business_state String?
   business_city String?
   business_street String?
@@ -134,4 +136,11 @@ model Offer {
   format String?
 
   @@index([senderId])
+}
+
+enum UserRole {
+  NEW_USER
+  APPROVED_USER
+  SUBSCRIBED_USER
+  ADMIN
 }

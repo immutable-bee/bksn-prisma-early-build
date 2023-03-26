@@ -1,4 +1,5 @@
 import { prisma } from "../../db/prismaDb";
+import { auth, requireRole } from "../../utils/middleware";
 
 const createListing = async (userId, listing) => {
   const {
@@ -34,7 +35,7 @@ const createListing = async (userId, listing) => {
   });
 };
 
-export default async (req, res) => {
+const handler = async (req, res) => {
   const [userEmail, listingsToAdd, updateInventory] = JSON.parse(req.body);
 
   // Fetch the user by email
@@ -92,70 +93,10 @@ export default async (req, res) => {
   res.status(200).json({ success: "Listings updated successfully" });
 };
 
-/*
-
-import { prisma } from "../../db/prismaDb";
-
 export default async (req, res) => {
-  const [userEmail, listingsToAdd, updateInventory] = JSON.parse(req.body);
-
-  // Fetch the user by email
-  const user = await prisma.user.findUnique({
-    where: {
-      email: userEmail,
-    },
-  });
-
-  // Check if the user exists
-  if (!user) {
-    res.status(404).json({ error: "User not found" });
-    return;
-  }
-
-  
-
-  const listingPromises = listingsToAdd.map((listing) => {
-    const {
-      sku,
-      title,
-      isbn,
-      author,
-      condition,
-      format,
-      notes,
-      price,
-      //free_shipping,
-      //shipping_price,
-    } = listing;
-    return prisma.listing.create({
-      data: {
-        owner: {
-          connect: {
-            id: user.id,
-          },
-        },
-        sku: sku,
-        title: title,
-        isbn: `${isbn}`,
-        author: author,
-        condition,
-        format,
-        notes,
-        price,
-        free_shipping: false,
-        shipping_price: 1.99,
-      },
+  await auth(req, res, async () => {
+    await requireRole(["SUBSCRIBED_USER"])(req, res, async () => {
+      await handler(req, res);
     });
   });
-
-  try {
-    await prisma.$transaction(listingPromises);
-    res.status(200).json({ message: "Listings uploaded successfully" });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ error: "An error occurred while uploading listings" });
-  }
 };
-
-*/

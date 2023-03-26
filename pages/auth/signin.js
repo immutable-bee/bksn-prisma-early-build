@@ -85,7 +85,6 @@ const SignInPage = () => {
   const termsModalHandler = () => setVisible(true);
   const termsModalCloseHandler = () => setVisible(false);
 
-  console.log(session);
   if (status == "loading")
     return <AuthContainer content={<h1>Checking Authentication ... </h1>} />;
 

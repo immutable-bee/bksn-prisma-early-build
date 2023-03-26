@@ -1,6 +1,7 @@
 import { prisma } from "../../db/prismaDb";
+import { auth, requireRole } from "../../utils/middleware";
 
-export default async (req, res) => {
+const handler = async (req, res) => {
   const [type, id, email, price, condition, format] = JSON.parse(req.body);
   const sender = await prisma.user.findUnique({
     where: { email: email },
@@ -39,4 +40,16 @@ export default async (req, res) => {
     default:
       res.json({ message: "incorrect offer type or none provided" });
   }
+};
+
+export default async (req, res) => {
+  await auth(req, res, async () => {
+    await requireRole(["APPROVED_USER", "SUBSCRIBED_USER"])(
+      req,
+      res,
+      async () => {
+        await handler(req, res);
+      }
+    );
+  });
 };
