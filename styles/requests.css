@@ -16,7 +16,7 @@
 #request-content-container {
   display: flex;
   flex-direction: column;
-  margin-top: 2vh;
+
   flex-wrap: wrap;
   gap: 1vh;
 }
@@ -30,9 +30,18 @@
   color: black;
   margin-top: 2vh;
   margin-left: 1.5vw;
+  border-bottom: #2eaaed 1px solid;
+  min-width: 75vw;
 }
 #requests-in-inv-container {
   display: flex;
+  min-height: 20vh;
+}
+
+#no-match-message {
+  align-self: center;
+  padding-left: 2rem;
+  text-align: center;
 }
 
 #requests-not-ininv-container {

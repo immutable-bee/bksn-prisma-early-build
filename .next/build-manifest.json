@@ -25,10 +25,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/upload-inventory": [
+    "/listings": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/upload-inventory.js"
+      "static/chunks/pages/listings.js"
+    ],
+    "/request-a-book": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/request-a-book.js"
+    ],
+    "/requests": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/requests.js"
     ]
   },
   "ampFirstPages": []

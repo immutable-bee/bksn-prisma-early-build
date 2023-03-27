@@ -287,8 +287,8 @@ const RequestsPage = ({ initialRequests }) => {
             <div id="request-content-container">
               <h4 className="requests-category-title">In your Inventory</h4>
               <div id="requests-in-inv-container">
-                {matches().map((book) => {
-                  return (
+                {matches()[0] != undefined ? (
+                  matches().map((book) => {
                     <RequestCard
                       key={book.id}
                       title={book.title}
@@ -298,9 +298,13 @@ const RequestsPage = ({ initialRequests }) => {
                       buttonType={"request-shopping-bag"}
                       btnHandler={requestModalHandler}
                       icon={openRequestIcon}
-                    />
-                  );
-                })}
+                    />;
+                  })
+                ) : (
+                  <h5 id="no-match-message">
+                    No requests found for <br></br> books in your inventory
+                  </h5>
+                )}
               </div>
               <h4 className="requests-category-title">Newest to Oldest</h4>
               <div id="requests-not-ininv-container">
